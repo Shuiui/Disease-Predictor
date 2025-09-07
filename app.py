@@ -3,8 +3,8 @@ import pickle
 import numpy as np
 
 # Load saved model
-model = pickle.load(open("disease_model.pkl", "rb"))
-
+with open("disease_model.pkl", "rb") as f:
+    model = pickle.load(f)
 st.title("🩺 Disease Prediction System")
 
 Pregnancies = st.number_input("Pregnancies", min_value=0, max_value=20, step=1)
@@ -21,3 +21,4 @@ if st.button("Predict"):
     prediction = model.predict(features)[0]
     result = "⚠️ Disease Detected" if prediction == 1 else "✅ No Disease Detected"
     st.subheader(f"Result: {result}")
+
