@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Prediction</title>
+    <style>
+        body { font-family: Arial; text-align: center; background: #f0f0f0; }
+        .form-container { background: white; padding: 20px; border-radius: 10px; width: 300px; margin: auto; }
+        input { margin: 5px; padding: 10px; width: 90%; }
+        button { background: #28a745; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #218838; }
+    </style>
+</head>
+<body>
+    <h2>Disease Prediction System</h2>
+    <div class="form-container">
+        <form action="/predict" method="post" onsubmit="showLoader()">
+            <input type="text" name="fever" placeholder="Fever"><br>
+            <input type="text" name="headache" placeholder="Headache"><br>
+            <input type="text" name="nausea" placeholder="Nausea"><br>
+            <input type="text" name="vomiting" placeholder="Vomiting"><br>
+            <input type="text" name="fatigue" placeholder="Fatigue"><br>
+            <input type="text" name="joint_pain" placeholder="Joint Pain"><br>
+            <input type="text" name="kkin_rash" placeholder="Skin Rash"><br>
+            <input type="text" name="weight_loss" placeholder="Weight Loss"><br>
+            <input type="text" name="yellow_eyes" placeholder="Yellow Eyes"><br>
+            <input type="text" name="cough" placeholder="Cough"><br>
+            <button type="submit">Predict</button>
+        </form>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+</body>
+</html>
