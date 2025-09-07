@@ -1,4 +1,4 @@
-from Flask import Flask, render_template, request
+from flask import Flask, render_template, request
 import pickle
 import numpy as np
 
@@ -22,4 +22,5 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
