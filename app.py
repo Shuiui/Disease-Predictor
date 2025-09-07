@@ -20,9 +20,10 @@ yellow_eyes = st.number_input("yellow eyes", min_value=0, max_value=1)
 
 if st.button("Predict"):
     features = np.array([[fever,headache,nausea,vomiting,fatigue,joint_pain,skin_rash,cough,weight_loss,yellow_eyes]])
-    prediction = model.predict(features)[0]
+    prediction = model.predict(predict_disease)
     result = "⚠️ Disease Detected" if prediction == 1 else "✅ No Disease Detected"
     st.subheader(f"Result: {result}")
+
 
 
 
